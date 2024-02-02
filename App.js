@@ -42,8 +42,8 @@ export default function App() {
 
   const executeSearch = (search) => {
     if (search === "") {
-      // If the search bar is empty, show all items
-      getData(); // Refresh the list with all items
+      
+      getData();
     } else {
       const filteredArray = DATA.filter((item) =>
         item.lastname.toLowerCase().startsWith(search.toLowerCase())
@@ -53,7 +53,7 @@ export default function App() {
         .sort((a, b) => a.lastname.localeCompare(b.lastname));
       setItems(sortedArray);
     }
-    setSelectedId(null); // Clear the selected ID when performing a new search
+    setSelectedId(null);
   };
 
   const renderItem = ({ item }) => (
